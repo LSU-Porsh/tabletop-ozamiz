@@ -31,55 +31,64 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isAdmin) {
             adminBtn.textContent = "🔓 Logout";
             adminBtn.classList.add("logout");
-            addPlayerBtn.style.display = "block";
-            adminElements.forEach(el => el.style.display = "flex");
+            if(addPlayerBtn) addPlayerBtn.style.display = "block";
+            if(adminElements) adminElements.forEach(el => el.style.display = "flex");
             addAdminDataButtons();
         } else {
             adminBtn.textContent = "🔒 Admin";
             adminBtn.classList.remove("logout");
-            addPlayerBtn.style.display = "none";
-            adminElements.forEach(el => el.style.display = "none");
+            if(addPlayerBtn) addPlayerBtn.style.display = "none";
+            if(adminElements) adminElements.forEach(el => el.style.display = "none");
             removeAdminDataButtons();
         }
     }
 
-    adminBtn.addEventListener("click", () => {
-        if (isAdmin) {
-            isAdmin = false;
-            localStorage.setItem("isAdmin", "false");
-            updateAdminUI();
-            adminMessage.style.display = "none";
-        } else {
-            adminLoginModal.classList.add("show");
-        }
-    });
+    if (adminBtn) {
+        adminBtn.addEventListener("click", () => {
+            if (isAdmin) {
+                isAdmin = false;
+                localStorage.setItem("isAdmin", "false");
+                updateAdminUI();
+                if(adminMessage) adminMessage.style.display = "none";
+            } else {
+                if(adminLoginModal) adminLoginModal.classList.add("show");
+            }
+        });
+    }
 
-    adminLoginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const password = document.getElementById("adminPassword").value;
-        if (password === ADMIN_PASSWORD) {
-            isAdmin = true;
-            localStorage.setItem("isAdmin", "true");
-            updateAdminUI();
-            adminMessage.classList.remove("error");
-            adminMessage.classList.add("success");
-            adminMessage.textContent = "✓ Login successful!";
-            adminMessage.style.display = "block";
-            setTimeout(() => {
-                adminLoginModal.classList.remove("show");
-                adminMessage.style.display = "none";
-                adminLoginForm.reset();
-            }, 1500);
-        } else {
-            adminMessage.classList.remove("success");
-            adminMessage.classList.add("error");
-            adminMessage.textContent = "✗ Incorrect password";
-            adminMessage.style.display = "block";
-        }
-    });
+    if (adminLoginForm) {
+        adminLoginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const password = document.getElementById("adminPassword").value;
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                localStorage.setItem("isAdmin", "true");
+                updateAdminUI();
+                if(adminMessage) {
+                    adminMessage.classList.remove("error");
+                    adminMessage.classList.add("success");
+                    adminMessage.textContent = "✓ Login successful!";
+                    adminMessage.style.display = "block";
+                }
+                setTimeout(() => {
+                    if(adminLoginModal) adminLoginModal.classList.remove("show");
+                    if(adminMessage) adminMessage.style.display = "none";
+                    adminLoginForm.reset();
+                }, 1500);
+            } else {
+                if(adminMessage) {
+                    adminMessage.classList.remove("success");
+                    adminMessage.classList.add("error");
+                    adminMessage.textContent = "✗ Incorrect password";
+                    adminMessage.style.display = "block";
+                }
+            }
+        });
+    }
 
     // =========== Leaderboard Rendering ===========
     function renderLeaderboard() {
+        if (!leaderboardBody) return;
         get(rankingsRef).then((snapshot) => {
             const data = snapshot.val();
             leaderboardBody.innerHTML = "";
@@ -110,114 +119,122 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =========== CRUD Operations ===========
-    addPlayerBtn.addEventListener("click", () => {
-        if (!isAdmin) {
-            alert("Admin access required. Please log in.");
-            adminLoginModal.classList.add("show");
-            return;
-        }
-        playerModal.classList.add("show");
-    });
+    if (addPlayerBtn) {
+        addPlayerBtn.addEventListener("click", () => {
+            if (!isAdmin) {
+                alert("Admin access required. Please log in.");
+                if (adminLoginModal) adminLoginModal.classList.add("show");
+                return;
+            }
+            if (playerModal) playerModal.classList.add("show");
+        });
+    }
     
     const addPlayerForm = document.getElementById("addPlayerForm");
-    addPlayerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const playerName = document.getElementById("playerName").value;
-        const playerWins = parseInt(document.getElementById("playerWins").value);
-        const playerLosses = parseInt(document.getElementById("playerLosses").value);
-        const playerPoints = parseInt(document.getElementById("playerPoints").value);
+    if (addPlayerForm) {
+        addPlayerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const playerName = document.getElementById("playerName").value;
+            const playerWins = parseInt(document.getElementById("playerWins").value);
+            const playerLosses = parseInt(document.getElementById("playerLosses").value);
+            const playerPoints = parseInt(document.getElementById("playerPoints").value);
 
-        const winRate = calculateWinRate(playerWins, playerLosses);
-        const rating = calculateRating(playerPoints);
+            const winRate = calculateWinRate(playerWins, playerLosses);
+            const rating = calculateRating(playerPoints);
 
-        const newPlayerRef = ref(database, `rankings/${gameType}/${Date.now()}`);
-        set(newPlayerRef, {
-            name: playerName,
-            wins: playerWins,
-            losses: playerLosses,
-            winRate: winRate,
-            rating: rating
-        }).then(() => {
-            alert("Player added successfully!");
-            addPlayerForm.reset();
-            playerModal.classList.remove("show");
-            renderLeaderboard();
-        }).catch((error) => {
-            alert("Error adding player: " + error.message);
+            const newPlayerRef = ref(database, `rankings/${gameType}/${Date.now()}`);
+            set(newPlayerRef, {
+                name: playerName,
+                wins: playerWins,
+                losses: playerLosses,
+                winRate: winRate,
+                rating: rating
+            }).then(() => {
+                alert("Player added successfully!");
+                addPlayerForm.reset();
+                if (playerModal) playerModal.classList.remove("show");
+                renderLeaderboard();
+            }).catch((error) => {
+                alert("Error adding player: " + error.message);
+            });
         });
-    });
+    }
     
     const editPlayerForm = document.getElementById("editPlayerForm");
-    editPlayerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const playerId = document.getElementById("editPlayerId").value;
-        const playerName = document.getElementById("editPlayerName").value;
-        const playerWins = parseInt(document.getElementById("editPlayerWins").value);
-        const playerLosses = parseInt(document.getElementById("editPlayerLosses").value);
-        const playerPoints = parseInt(document.getElementById("editPlayerPoints").value);
+    if (editPlayerForm) {
+        editPlayerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const playerId = document.getElementById("editPlayerId").value;
+            const playerName = document.getElementById("editPlayerName").value;
+            const playerWins = parseInt(document.getElementById("editPlayerWins").value);
+            const playerLosses = parseInt(document.getElementById("editPlayerLosses").value);
+            const playerPoints = parseInt(document.getElementById("editPlayerPoints").value);
 
-        const winRate = calculateWinRate(playerWins, playerLosses);
-        const rating = calculateRating(playerPoints);
+            const winRate = calculateWinRate(playerWins, playerLosses);
+            const rating = calculateRating(playerPoints);
 
-        const playerRef = ref(database, `rankings/${gameType}/${playerId}`);
-        set(playerRef, {
-            name: playerName,
-            wins: playerWins,
-            losses: playerLosses,
-            winRate: winRate,
-            rating: rating
-        }).then(() => {
-            alert("Player updated successfully!");
-            editPlayerForm.reset();
-            editPlayerModal.classList.remove("show");
-            renderLeaderboard();
-        }).catch((error) => {
-            alert("Error updating player: " + error.message);
+            const playerRef = ref(database, `rankings/${gameType}/${playerId}`);
+            set(playerRef, {
+                name: playerName,
+                wins: playerWins,
+                losses: playerLosses,
+                winRate: winRate,
+                rating: rating
+            }).then(() => {
+                alert("Player updated successfully!");
+                editPlayerForm.reset();
+                if (editPlayerModal) editPlayerModal.classList.remove("show");
+                renderLeaderboard();
+            }).catch((error) => {
+                alert("Error updating player: " + error.message);
+            });
         });
-    });
+    }
 
-    leaderboardBody.addEventListener("click", (e) => {
-        if (!isAdmin) return;
+    if (leaderboardBody) {
+        leaderboardBody.addEventListener("click", (e) => {
+            if (!isAdmin) return;
 
-        if (e.target.classList.contains("delete-btn")) {
-            const playerId = e.target.dataset.id;
-            if (confirm("Are you sure you want to delete this player?")) {
+            if (e.target.classList.contains("delete-btn")) {
+                const playerId = e.target.dataset.id;
+                if (confirm("Are you sure you want to delete this player?")) {
+                    const playerRef = ref(database, `rankings/${gameType}/${playerId}`);
+                    remove(playerRef).then(() => {
+                        alert("Player deleted successfully!");
+                        renderLeaderboard();
+                    }).catch((error) => {
+                        alert("Error deleting player: " + error.message);
+                    });
+                }
+            }
+
+            if (e.target.classList.contains("edit-btn")) {
+                const playerId = e.target.dataset.id;
                 const playerRef = ref(database, `rankings/${gameType}/${playerId}`);
-                remove(playerRef).then(() => {
-                    alert("Player deleted successfully!");
-                    renderLeaderboard();
-                }).catch((error) => {
-                    alert("Error deleting player: " + error.message);
+                get(playerRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const player = snapshot.val();
+                        document.getElementById("editPlayerId").value = playerId;
+                        document.getElementById("editPlayerName").value = player.name;
+                        document.getElementById("editPlayerWins").value = player.wins;
+                        document.getElementById("editPlayerLosses").value = player.losses;
+                        document.getElementById("editPlayerPoints").value = (player.rating - 1000) * 10;
+                        if(editPlayerModal) editPlayerModal.classList.add("show");
+                    }
                 });
             }
-        }
-
-        if (e.target.classList.contains("edit-btn")) {
-            const playerId = e.target.dataset.id;
-            const playerRef = ref(database, `rankings/${gameType}/${playerId}`);
-            get(playerRef).then((snapshot) => {
-                if (snapshot.exists()) {
-                    const player = snapshot.val();
-                    document.getElementById("editPlayerId").value = playerId;
-                    document.getElementById("editPlayerName").value = player.name;
-                    document.getElementById("editPlayerWins").value = player.wins;
-                    document.getElementById("editPlayerLosses").value = player.losses;
-                    document.getElementById("editPlayerPoints").value = (player.rating - 1000) * 10;
-                    editPlayerModal.classList.add("show");
-                }
-            });
-        }
-    });
+        });
+    }
 
     // =========== Characters Carousel ===========
-    async function loadCharactersCarousel() {
+    async function loadCharactersCarousel(carouselId, jsonFile) {
         try {
-            const response = await fetch('./unmatched_characters.json');
+            const response = await fetch(jsonFile);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const characters = await response.json();
-            const carouselContainer = document.getElementById('charactersCarousel');
+            const carouselContainer = document.getElementById(carouselId);
     
             if (carouselContainer) {
                 characters.forEach(character => {
@@ -228,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="${character.image_url}" alt="${character.name}" class="character-image">
                             <div class="card-content">
                                 <h3>${character.name}</h3>
-                                <p>${character.set}</p>
+                                <p>${character.set || ''}</p>
                             </div>
                         </div>
                     `;
@@ -236,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
     
                 // Initialize Flickity
-                new Flickity(carouselContainer, {
+                const flkty = new Flickity(carouselContainer, {
                     contain: true,
                     wrapAround: true,
                     autoPlay: 3000,
@@ -244,6 +261,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     prevNextButtons: true,
                     cellAlign: 'left'
                 });
+
+                // Hero Reveal Animation
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                        } else {
+                            entry.target.classList.remove('is-revealed');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                flkty.cells.forEach(cell => observer.observe(cell.element));
             }
         } catch (error) {
             console.error("Could not load characters for carousel:", error);
@@ -340,10 +372,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // =========== Modal Closing Logic ===========
-    [adminLoginModal, playerModal, editPlayerModal].forEach(modal => {
+    const modals = [adminLoginModal, playerModal, editPlayerModal].filter(m => m != null);
+    modals.forEach(modal => {
         modal.addEventListener("click", (e) => {
             if (e.target === modal) {
-                modal.classList.remove("show");
+                modal.classList.remove('show');
             }
         });
 
@@ -359,7 +392,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLeaderboard();
     updateAdminUI();
     if (document.getElementById('charactersCarousel')) {
-        loadCharactersCarousel();
+        loadCharactersCarousel('charactersCarousel', './unmatched_characters.json');
+    }
+    if (document.getElementById('diceThroneCarousel')) {
+        loadCharactersCarousel('diceThroneCarousel', './dice_throne_heroes.json');
     }
 });
 

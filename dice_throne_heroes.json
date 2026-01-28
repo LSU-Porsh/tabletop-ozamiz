@@ -1,44 +1,42 @@
-heroes[
+[
     {
-        "name":"Barbarian",
-        "images":"DiceThrone-Assets/barbarian.avif"
+        "name": "Barbarian",
+        "image_url": "DiceThrone-Assets/barbarian.avif"
     },
     {
-        "name":"Pirate",
-        "images":"DiceThrone-Assets/pirate.avif"
+        "name": "Artificer",
+        "image_url": "DiceThrone-Assets/artificer.avif"
     },
     {
-        "name":"Viking",
-        "images":"DiceThrone-Assets/viking.avif"
+        "name": "Ninja",
+        "image_url": "DiceThrone-Assets/ninja.avif"
     },
     {
-        "name":"Ninja",
-        "images":"DiceThrone-Assets/ninja.avif"
+        "name": "Gunslinger",
+        "image_url": "DiceThrone-Assets/gunslinger.avif"
     },
     {
-        "name":"Gunslinger",
-        "images":"DiceThrone-Assets/gunslinger.avif"
-    },{
-        "name":"Monk",
-        "images":"DiceThrone-Assets/monk.avif"
+        "name": "Monk",
+        "image_url": "DiceThrone-Assets/monk.avif"
     },
     {
-          "name":"Moon Elf",
-        "images":"DiceThrone-Assets/moon_elf.avif"
-    },{
-          "name":"Paladin",
-        "images":"DiceThrone-Assets/paladin.avif"
+        "name": "Moon Elf",
+        "image_url": "DiceThrone-Assets/moon_elf.avif"
     },
     {
-          "name":"Pyromancer",
-        "images":"DiceThrone-Assets/pyromancer.avif"
+        "name": "Paladin",
+        "image_url": "DiceThrone-Assets/paladin.avif"
     },
     {
-          "name":"Shadow Thief",
-        "images":"DiceThrone-Assets/shadow_thief.avif"
+        "name": "Pyromancer",
+        "image_url": "DiceThrone-Assets/pyromancer.avif"
     },
     {
-          "name":"Treant",
-        "images":"DiceThrone-Assets/treant.avif"
+        "name": "Shadow Thief",
+        "image_url": "DiceThrone-Assets/shadow_thief.avif"
+    },
+    {
+        "name": "Treant",
+        "image_url": "DiceThrone-Assets/treant.avif"
     }
 ]
