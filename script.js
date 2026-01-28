@@ -693,3 +693,66 @@ editPlayerForm.addEventListener("submit", (e) => {
     editModal.classList.remove("show");
   }, 1500);
 });
+
+// ==================== Firebase Database Functions ====================
+// Upload local JSON data to Firebase (run once to populate)
+async function uploadDataToFirebase() {
+  try {
+    console.log("Starting data upload to Firebase...");
+
+    // Upload Unmatched boards
+    const boardsResponse = await fetch("unmatched_board.json");
+    const boards = await boardsResponse.json();
+    await db.ref("unmatched/boards").set(boards);
+    console.log("✅ Boards uploaded");
+
+    // Upload Unmatched characters
+    const charactersResponse = await fetch("unmatched_characters.json");
+    const characters = await charactersResponse.json();
+    await db.ref("unmatched/characters").set(characters);
+    console.log("✅ Characters uploaded");
+
+    // Upload Unmatched sets
+    const setsResponse = await fetch("unmatched_set.json");
+    const sets = await setsResponse.json();
+    await db.ref("unmatched/sets").set(sets);
+    console.log("✅ Sets uploaded");
+
+    alert("✅ All data uploaded to Firebase successfully!");
+  } catch (error) {
+    console.error("❌ Error uploading data:", error);
+    alert("Error uploading data: " + error.message);
+  }
+}
+
+// Save player ranking to Firebase
+function saveRankingToFirebase(gameType, playerData) {
+  const timestamp = new Date().toISOString();
+  db.ref(`rankings/${gameType}/${timestamp}`)
+    .set(playerData)
+    .then(() => console.log("✅ Ranking saved to Firebase"))
+    .catch((error) => console.error("❌ Error saving ranking:", error));
+}
+
+// Load rankings from Firebase
+function loadRankingsFromFirebase(gameType) {
+  db.ref(`rankings/${gameType}`).on("value", (snapshot) => {
+    const rankings = snapshot.val();
+    console.log(`${gameType} Rankings:`, rankings);
+    // Update your UI with rankings here
+  });
+}
+
+// Export data from Firebase
+function exportDataFromFirebase(gameType) {
+  db.ref(`rankings/${gameType}`).once("value", (snapshot) => {
+    const data = snapshot.val();
+    const dataStr = JSON.stringify(data, null, 2);
+    const dataBlob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${gameType}-rankings-${new Date().toISOString()}.json`;
+    link.click();
+  });
+}
