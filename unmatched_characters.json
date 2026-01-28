@@ -1,0 +1,157 @@
+[{
+  "name": "Sinbad",
+  "set": "Unmatched: Battle of Legends, Volume One",
+  "image": "Character_Images/sinbad.png",
+  "image-card":"Character_Images/sinbad-card.png",
+  "description": "The legendary sailor from Middle Eastern folklore, known for his daring voyages and cunning tactics."
+},
+{
+"name": "King Arthur",
+"set": "Battle of Legends, Volume One",
+"image": "Character_Images/king_arthur.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "The legendary king of Camelot, wielding Excalibur and leading his loyal knights into battle."
+},
+{
+"name": "Alice",
+"set": "Battle of Legends, Volume One",
+"image": "Character_Images/alice.png",
+"image-card":"Character_Images/alice-card.png",
+"description": "The curious"},
+{ 
+"name":"Medusa",
+"set":"Battle of Legends, Volume One",
+"image":"Character_Images/medusa.png",
+"image-card":"Character_Images/medusa-card.png",
+"description":"The Gorgon of Greek myth, with snakes for hair and a deadly gaze."
+},
+{
+"name": "Sherlock Holmes",
+"set": "Cobble & Fog",
+"image": "Character_Images/holmes.png",
+"image-card":"Character_Images/holmes-card.png",
+"description": "The brilliant detective from Arthur Conan Doyle's stories, known for his deductive reasoning and strategic mind."
+},
+{
+"name": "Dracula",
+"set": "Cobble & Fog",
+"image": "Character_Images/dracula.png",
+"image-card":"Character_Images/dracula-card.png",
+"description": "The iconic vampire from Bram Stoker's novel, using his dark powers to outwit and overpower his opponents."
+},
+{
+"name": "Dr. Jekyll and Mr. Hyde",
+"set": " Cobble & Fog",
+"image": "Character_Images/jekyll-and-hyde.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "The dual-personality character from Robert Louis Stevenson's novella, switching between the rational Dr. Jekyll and the monstrous Mr. Hyde."
+},
+{
+"name": "The Invisible Man",
+"set": "Cobble & Fog",
+"image": "Character_Images/invisible man.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "The mysterious character from H.G. Wells' novel, using his invisibility to confuse and outwit his enemies."
+},
+{
+"name": "Achilles",
+"set": "Battle of Legends, Volume Two",
+"image": "Character_Images/achilles.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "The legendary Greek hero of the Trojan War, known for his unmatched combat skills and near invincibility."
+},
+{
+"name":"Bloody Mary",
+"set":"Battle of Legends, Volume Two",
+"image":"Character_Images/bloody_mary.png",
+"image-card":"Character_Images/bloody_mary-card.png",
+"description":"The vengeful spirit of the legendary queen, using her mirror to curse and control her enemies."
+
+},
+{
+"name": "Sun Wukong",
+"set": "Battle of Legends, Volume Two",
+"image": "Character_Images/sun_wukong.png",
+"image-card":"Character_Images/sun_wukong-card.png",
+"description": "The mischievous Monkey King from Chinese folklore, using his magical staff and shape-shifting abilities to outwit his foes."
+},
+{
+"name":"Yennenga",
+"set":"Battle of Legends, Volume Two",
+"image":"Character_Images/yennenga.png",
+"image-card":"Character_Images/yennenga-card.png",
+"description":"The legendary warrior princess of the Mossi people, skilled in combat and mounted archery."
+
+},
+{
+"name": "Harry Houdini",
+"set": "Houdini vs. The Genie",
+"image": "Character_Images/houdini.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "The legendary escape artist and magician, using his tricks and illusions to outmaneuver opponents."
+},
+{
+"name": "The Genie",
+"set": "Houdini vs. The Genie",
+"image": "Character_Images/genie.png",
+"image-card":"Character_Images/genie-card.png",
+"description": "A mystical being from Arabian folklore, granting wishes and wielding magical powers."
+},
+{
+"name": "Nikola Tesla",
+"set": "Unmatched: Tales to Amaze",
+"image": "Character_Images/tesla.png",
+"image-card":"Character_Images/tesla-card.png",
+"description": "The brilliant inventor, wielding futuristic technology and electricity-based abilities to outsmart his foes."
+},
+{
+"name": "Dr. Jill Trent",
+"set": "Unmatched Adventures - Tales to Amaze",
+"image": "Character_Images/jill_trint.png",
+"image-card":"Character_Images/achilles-card.png",
+"description": "A brilliant inventor and detective, using her gadgets and intellect to solve problems and defeat enemies."
+},
+{
+"name":"Golden Bat",
+"set":"Unmatched Adventures - Tales to Amaze",
+"image":"Character_Images/golden_bat.png",
+"image-card":"Character_Images/golden_bat-card.png",
+"description":"The mysterious superhero with superhuman strength and flight abilities."
+},
+{
+"name": "Annie Christmas",
+"set": "Unmatched: Tales to Amaze",
+"image": "Character_Images/ann-christmas.png",
+"image-card":"Character_Images/ann-christmas.png",
+"description": "A larger-than-life folk heroine from American tall tales, known for her strength and riverboat adventures."
+},
+{
+"name": "William Shakespeare",
+"set": "Slings and Arrows",
+"image": "Character_Images/shakespear.png",
+"image-card":"Character_Images/shakespear-card.png",
+"description": "The iconic playwright, using his wit and literary prowess to influence the battlefield."
+},
+{
+"name": "Titania",
+"set": "Slings and Arrows",
+"image": "Character_Images/titiana.png",
+"image-card":"Character_Images/titiana-card.png",
+"description": "The queen of the fairies from Shakespeare's 'A Midsummer Night's Dream,' commanding nature and magic."
+},
+{
+"name": "The Wayward",
+"set": "Slings and Arrows",
+"image": "Character_Images/wayward.png",
+"image-card":"Character_Images/wayward-card.png",
+"description": "A mysterious and unpredictable character, using unconventional tactics to gain the upper hand."
+},{
+"name":"Hamlet",
+"set":"Slings and Arrows",
+"image":"Character_Images/hamlet.png",
+"image-card":"Character_Images/hamlet-card.png",
+"description":"The tragic prince of Denmark, torn between duty and revenge."
+
+}
+
+]

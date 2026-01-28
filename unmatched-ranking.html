@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabletop-Ozamiz - Player Leaderboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">🎲 Tabletop-Ozamiz</div>
+        <ul class="nav-menu">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li>
+            <a href="index.html#boardgames" class="nav-link">Boardgame</a>
+          </li>
+          <li>
+            <a href="unmatched-ranking.html" class="nav-link active"
+              >Unmatched Ranking</a
+            >
+          </li>
+          <li>
+            <a href="dice-throne-ranking.html" class="nav-link"
+              >Dice Throne Ranking</a
+            >
+          </li>
+          <li><a href="index.html#events" class="nav-link">Events</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero"
+      style="
+        background-image: url(&quot;Assets/batlle-of-legends-2.png&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img
+          src="Assets/unmatched-logo.png"
+          alt="Unmatched Logo"
+          class="hero-logo"
+        />
+        <h1 class="hero-title">Unmatched Rankings (Unofficial)</h1>
+        <p class="hero-subtitle">
+          Compete with the best players in the ultimate tactical card game
+        </p>
+        <button class="cta-button">View Leaderboard</button>
+      </div>
+      <div class="hero-shape"></div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        "
+      >
+        <h2 class="section-title" style="margin: 0">Top Players</h2>
+        <div style="display: flex; gap: 1rem">
+          <button
+            class="add-player-btn"
+            id="addPlayerBtn"
+            style="display: none"
+          >
+            + Add Player
+          </button>
+          <button class="admin-btn" id="adminBtn">🔒 Admin</button>
+        </div>
+      </div>
+      <div class="leaderboard-container">
+        <div class="leaderboard-header">
+          <div class="rank-col">Rank</div>
+          <div class="player-col">Player</div>
+          <div class="wins-col">Wins</div>
+          <div class="ratio-col">Win Rate</div>
+          <div class="points-col">Rating</div>
+          <div class="actions-col">Actions</div>
+        </div>
+        <div class="leaderboard-body">
+          <div class="leaderboard-row rank-1">
+            <div class="rank-col">🥇 1</div>
+            <div class="player-col">
+              <span class="player-badge">Pro</span> Alex Champion
+            </div>
+            <div class="wins-col">342</div>
+            <div class="ratio-col">78.5%</div>
+            <div class="points-col">2,850</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Alex Champion"
+                data-wins="342"
+                data-losses="95"
+                data-points="28500"
+                data-time="320"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row rank-2">
+            <div class="rank-col">🥈 2</div>
+            <div class="player-col">
+              <span class="player-badge elite">Elite</span> Jordan Masters
+            </div>
+            <div class="wins-col">298</div>
+            <div class="ratio-col">75.2%</div>
+            <div class="points-col">2,720</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Jordan Masters"
+                data-wins="298"
+                data-losses="98"
+                data-points="27200"
+                data-time="325"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row rank-3">
+            <div class="rank-col">🥉 3</div>
+            <div class="player-col">
+              <span class="player-badge elite">Elite</span> Casey Striker
+            </div>
+            <div class="wins-col">267</div>
+            <div class="ratio-col">73.1%</div>
+            <div class="points-col">2,615</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Casey Striker"
+                data-wins="267"
+                data-losses="98"
+                data-points="26150"
+                data-time="330"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row">
+            <div class="rank-col">4</div>
+            <div class="player-col">Morgan Tactical</div>
+            <div class="wins-col">245</div>
+            <div class="ratio-col">71.8%</div>
+            <div class="points-col">2,520</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Morgan Tactical"
+                data-wins="245"
+                data-losses="96"
+                data-points="25200"
+                data-time="335"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row">
+            <div class="rank-col">5</div>
+            <div class="player-col">Riley Blade</div>
+            <div class="wins-col">223</div>
+            <div class="ratio-col">69.4%</div>
+            <div class="points-col">2,410</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Riley Blade"
+                data-wins="223"
+                data-losses="98"
+                data-points="24100"
+                data-time="340"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row">
+            <div class="rank-col">6</div>
+            <div class="player-col">Taylor Victory</div>
+            <div class="wins-col">198</div>
+            <div class="ratio-col">67.2%</div>
+            <div class="points-col">2,290</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Taylor Victory"
+                data-wins="198"
+                data-losses="97"
+                data-points="22900"
+                data-time="345"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row">
+            <div class="rank-col">7</div>
+            <div class="player-col">Phoenix Rising</div>
+            <div class="wins-col">187</div>
+            <div class="ratio-col">65.8%</div>
+            <div class="points-col">2,180</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Phoenix Rising"
+                data-wins="187"
+                data-losses="97"
+                data-points="21800"
+                data-time="350"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+          <div class="leaderboard-row">
+            <div class="rank-col">8</div>
+            <div class="player-col">Dominion Force</div>
+            <div class="wins-col">165</div>
+            <div class="ratio-col">63.5%</div>
+            <div class="points-col">2,060</div>
+            <div class="actions-col">
+              <button
+                class="edit-btn"
+                data-player="Dominion Force"
+                data-wins="165"
+                data-losses="95"
+                data-points="20600"
+                data-time="355"
+              >
+                ✏️ Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="adminCloseBtn">&times;</span>
+        <h2>Admin Login</h2>
+        <form id="adminLoginForm" class="player-form">
+          <div class="form-group">
+            <label for="adminPassword">Password *</label>
+            <input
+              type="password"
+              id="adminPassword"
+              placeholder="Enter admin password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Login</button>
+            <button type="button" class="cancel-btn" id="adminCancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+        <div
+          id="adminMessage"
+          class="admin-message"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Add Player Modal -->
+    <div id="playerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Player</h2>
+        <form id="addPlayerForm" class="player-form">
+          <div class="form-group">
+            <label for="playerName">Player Name / Nickname *</label>
+            <div class="autocomplete-container">
+              <input
+                type="text"
+                id="playerName"
+                placeholder="Enter player name"
+                required
+                autocomplete="off"
+              />
+              <div id="suggestions" class="suggestions-list"></div>
+            </div>
+            <small id="nameError" class="error-message"></small>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="playerWins">Wins *</label>
+              <input
+                type="number"
+                id="playerWins"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="playerLosses">Losses *</label>
+              <input
+                type="number"
+                id="playerLosses"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="playerPoints">Points Scored *</label>
+              <input
+                type="number"
+                id="playerPoints"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="playerTime">Time Taken (minutes) *</label>
+              <input
+                type="number"
+                id="playerTime"
+                placeholder="0"
+                min="0"
+                step="0.5"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Add Player</button>
+            <button type="button" class="cancel-btn" id="cancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Player Modal -->
+    <div id="editPlayerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="editCloseBtn">&times;</span>
+        <h2>Edit Player Record</h2>
+        <form id="editPlayerForm" class="player-form">
+          <div class="form-group">
+            <label for="editPlayerName">Player Name *</label>
+            <input
+              type="text"
+              id="editPlayerName"
+              placeholder="Enter player name"
+              required
+              disabled
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="editPlayerWins">Wins *</label>
+              <input
+                type="number"
+                id="editPlayerWins"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="editPlayerLosses">Losses *</label>
+              <input
+                type="number"
+                id="editPlayerLosses"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="editPlayerPoints">Points Scored *</label>
+              <input
+                type="number"
+                id="editPlayerPoints"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="editPlayerTime">Time Taken (minutes) *</label>
+              <input
+                type="number"
+                id="editPlayerTime"
+                placeholder="0"
+                min="0"
+                step="0.5"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Update Player</button>
+            <button type="button" class="cancel-btn" id="editCancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Characters Section -->
+    <section class="characters-section">
+      <div class="container">
+        <h2 class="section-title">Playable Characters</h2>
+        <div class="characters-grid" id="charactersGrid">
+          <!-- Characters will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Game Section -->
+    <section id="rules" class="game-info">
+      <h2 class="section-title">About Unmatched</h2>
+      <div class="game-grid">
+        <div class="game-card">
+          <h3>⚔️ Fast-Paced Battles</h3>
+          <p>
+            Tactical one-on-one card battles that test your strategy and
+            decision-making skills.
+          </p>
+        </div>
+        <div class="game-card highlighted">
+          <h3>🎭 Unique Characters</h3>
+          <p>
+            Play as legendary heroes with distinct abilities and playstyles.
+            Each character is uniquely balanced.
+          </p>
+        </div>
+        <div class="game-card">
+          <h3>🏆 Competitive Ranking</h3>
+          <p>
+            Climb the ranks and prove yourself as the ultimate Unmatched
+            champion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="contact" class="join-section">
+      <div class="contact-content">
+        <h2>Join the Competition</h2>
+        <p>
+          Register your account and start your journey to the top of the
+          rankings
+        </p>
+        <form class="contact-form">
+          <input type="text" placeholder="Player Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="text" placeholder="Favorite Character" required />
+          <button type="submit" class="submit-button">Register Now</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: info@tabletop-ozamiz.com</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Location: Ozamiz City Community Center</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://discord.com" target="_blank">Discord</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="index.html#boardgames">Games</a>
+          <a href="index.html#events">Events</a>
+          <a href="index.html#about">About</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Tabletop-Ozamiz. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+[
+  {
+    "board_name": "Marmoreal",
+    "board_image": "Board/Marmoreal.png",
+    "set": "Battle of Legends, Volume One",
+    "spaces": "31",
+    "zone": "8",
+    "max_players": 4
+  },
+  {
+    "board_name": "Sarpedon",
+    "board_image": "Board/Sarpedon.png",
+    "set": "Battle of Legends, Volume One",
+    "spaces": "38",
+    "zone": "6",
+    "max_players": 4
+  },
+  {
+    "board_name": "SoHo",
+    "board_image": "Board/soho.png",
+    "set": "Cobble & Fog",
+    "spaces": "29",
+    "zone": "7",
+    "max_players": 4
+  },
+  {
+    "board_name": "Baskerville Manor",
+    "board_image": "Board/Baskerville-Manor.png",
+    "set": "Cobble & Fog",
+    "spaces": "32",
+    "zone": "7",
+    "max_players": 4
+  },
+  {
+    "board_name": "Hanging Gardens",
+    "board_image": "Board/hanging-gardens.png",
+    "set": "Battle of Legends, Volume Two",
+    "spaces": "33",
+    "zone": "8",
+    "max_players": 4
+  },
+
+  {
+    "board_name": "McMinnville",
+    "board_image": "Board/McMinnville.png",
+    "set": "Unmatched Adventures - Tales to Amaze",
+    "spaces": "42",
+    "zone": "10",
+    "max_players": 5
+  },
+  {
+    "board_name": "Point Pleasant",
+    "board_image": "Board/Point-Pleasant.png",
+    "set": "Unmatched Adventures - Tales to Amaze",
+    "spaces": "40",
+    "zone": "7",
+    "max_players": 5
+  },
+   {
+    "board_name": "Globe Theatre",
+    "board_image": "Board/globe-theatre.png",
+    "set": "Slings & Arrows",
+    "spaces": "32",
+    "zone": "10",
+    "max_players": 4
+  },
+  {
+    "board_name": "King Solomon's Mine",
+    "board_image": "Board/King-Solomons-Mine.png",
+    "set": "Houdini vs. The Genie",
+    "spaces": "29s",
+    "zone": "7",
+    "max_players": 2
+  }
+
+]
