@@ -358,6 +358,8 @@ p {
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  margin-left:2rem;
+  margin-right:2rem;
 }
 
 .leaderboard-header {
@@ -423,6 +425,7 @@ p {
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
+  margin-right:2rem;
 }
 
 .add-player-btn {
