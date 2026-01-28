@@ -24,6 +24,7 @@
               >Dice Throne Ranking</a
             >
           </li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#events" class="nav-link">Events</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
         </ul>
@@ -307,6 +308,97 @@
       </div>
     </section>
 
+    <!-- Event Gallery Section -->
+    <section id="gallery" class="gallery-events-section">
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+          "
+        >
+          <h2 class="section-title" style="margin: 0">Event Gallery</h2>
+          <div id="galleryAdminControls" style="display: none; gap: 0.5rem">
+            <button
+              id="addPhotoBtn"
+              class="admin-btn"
+              style="padding: 0.75rem 1.5rem"
+            >
+              + Add Photo
+            </button>
+            <button
+              id="deletePhotoModeBtn"
+              class="admin-btn"
+              style="padding: 0.75rem 1.5rem"
+            >
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+        <div id="eventGallery" class="event-gallery-grid">
+          <!-- Gallery items will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Photo Modal -->
+    <div id="addPhotoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="addPhotoCloseBtn">&times;</span>
+        <h2>Add New Photo</h2>
+        <form id="addPhotoForm" class="player-form">
+          <div class="form-group">
+            <label for="photoTitle">Photo Title *</label>
+            <input
+              type="text"
+              id="photoTitle"
+              placeholder="Enter photo title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="photoDescription">Description</label>
+            <textarea
+              id="photoDescription"
+              placeholder="Enter photo description"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="photoCategory">Category</label>
+            <select id="photoCategory">
+              <option value="tournament">Tournament</option>
+              <option value="casual">Casual</option>
+              <option value="league">League</option>
+              <option value="community">Community</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="photoUrl">Photo URL *</label>
+            <input
+              type="url"
+              id="photoUrl"
+              placeholder="https://example.com/photo.jpg"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="photoDate">Date</label>
+            <input type="date" id="photoDate" />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Add Photo</button>
+            <button type="button" class="cancel-btn" id="photoFormCancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="about-section">
       <div class="container">
@@ -359,6 +451,7 @@
     </footer>
 
     <script type="module" src="firebase.js"></script>
+    <script type="module" src="gallery.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

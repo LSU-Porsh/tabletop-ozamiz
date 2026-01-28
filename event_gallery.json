@@ -1,0 +1,36 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Unmatched Tournament - January 2026",
+      "description": "Players competing in the monthly Unmatched tournament",
+      "imageUrl": "https://via.placeholder.com/400x300?text=Unmatched+Tournament",
+      "date": "2026-01-15",
+      "category": "tournament"
+    },
+    {
+      "id": 2,
+      "title": "Casual Game Night",
+      "description": "Community members enjoying casual gaming sessions",
+      "imageUrl": "https://via.placeholder.com/400x300?text=Game+Night",
+      "date": "2026-01-20",
+      "category": "casual"
+    },
+    {
+      "id": 3,
+      "title": "Dice Throne League",
+      "description": "Exciting moments from our Dice Throne league matches",
+      "imageUrl": "https://via.placeholder.com/400x300?text=Dice+Throne+League",
+      "date": "2026-01-18",
+      "category": "league"
+    },
+    {
+      "id": 4,
+      "title": "Community Gathering",
+      "description": "Members of Tabletop-Ozamiz community",
+      "imageUrl": "https://via.placeholder.com/400x300?text=Community+Gathering",
+      "date": "2026-01-10",
+      "category": "community"
+    }
+  ]
+}
