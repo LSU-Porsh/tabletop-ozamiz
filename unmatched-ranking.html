@@ -1,12 +1,14 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabletop-Ozamiz - Player Leaderboard</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   </head>
-  <body>
+  <body data-game-type="unmatched">
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="nav-container">
@@ -72,14 +74,14 @@
           align-items: center;
           margin-bottom: 2rem;
           flex-wrap: wrap;
+          
         "
       >
-        <h2 class="section-title" style="margin: 0">Top Players</h2>
-        <div style="display: flex; gap: 1rem">
+        <h2 class="section-title" style="margin:0;margin-left:2rem;">Rankings</h2>
+        <div style="display: flex; gap: 1rem;">
           <button
             class="add-player-btn"
             id="addPlayerBtn"
-            style="display: none"
           >
             + Add Player
           </button>
@@ -96,164 +98,7 @@
           <div class="actions-col">Actions</div>
         </div>
         <div class="leaderboard-body">
-          <div class="leaderboard-row rank-1">
-            <div class="rank-col">🥇 1</div>
-            <div class="player-col">
-              <span class="player-badge">Pro</span> Alex Champion
-            </div>
-            <div class="wins-col">342</div>
-            <div class="ratio-col">78.5%</div>
-            <div class="points-col">2,850</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Alex Champion"
-                data-wins="342"
-                data-losses="95"
-                data-points="28500"
-                data-time="320"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row rank-2">
-            <div class="rank-col">🥈 2</div>
-            <div class="player-col">
-              <span class="player-badge elite">Elite</span> Jordan Masters
-            </div>
-            <div class="wins-col">298</div>
-            <div class="ratio-col">75.2%</div>
-            <div class="points-col">2,720</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Jordan Masters"
-                data-wins="298"
-                data-losses="98"
-                data-points="27200"
-                data-time="325"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row rank-3">
-            <div class="rank-col">🥉 3</div>
-            <div class="player-col">
-              <span class="player-badge elite">Elite</span> Casey Striker
-            </div>
-            <div class="wins-col">267</div>
-            <div class="ratio-col">73.1%</div>
-            <div class="points-col">2,615</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Casey Striker"
-                data-wins="267"
-                data-losses="98"
-                data-points="26150"
-                data-time="330"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row">
-            <div class="rank-col">4</div>
-            <div class="player-col">Morgan Tactical</div>
-            <div class="wins-col">245</div>
-            <div class="ratio-col">71.8%</div>
-            <div class="points-col">2,520</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Morgan Tactical"
-                data-wins="245"
-                data-losses="96"
-                data-points="25200"
-                data-time="335"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row">
-            <div class="rank-col">5</div>
-            <div class="player-col">Riley Blade</div>
-            <div class="wins-col">223</div>
-            <div class="ratio-col">69.4%</div>
-            <div class="points-col">2,410</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Riley Blade"
-                data-wins="223"
-                data-losses="98"
-                data-points="24100"
-                data-time="340"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row">
-            <div class="rank-col">6</div>
-            <div class="player-col">Taylor Victory</div>
-            <div class="wins-col">198</div>
-            <div class="ratio-col">67.2%</div>
-            <div class="points-col">2,290</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Taylor Victory"
-                data-wins="198"
-                data-losses="97"
-                data-points="22900"
-                data-time="345"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row">
-            <div class="rank-col">7</div>
-            <div class="player-col">Phoenix Rising</div>
-            <div class="wins-col">187</div>
-            <div class="ratio-col">65.8%</div>
-            <div class="points-col">2,180</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Phoenix Rising"
-                data-wins="187"
-                data-losses="97"
-                data-points="21800"
-                data-time="350"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
-          <div class="leaderboard-row">
-            <div class="rank-col">8</div>
-            <div class="player-col">Dominion Force</div>
-            <div class="wins-col">165</div>
-            <div class="ratio-col">63.5%</div>
-            <div class="points-col">2,060</div>
-            <div class="actions-col">
-              <button
-                class="edit-btn"
-                data-player="Dominion Force"
-                data-wins="165"
-                data-losses="95"
-                data-points="20600"
-                data-time="355"
-              >
-                ✏️ Edit
-              </button>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -370,6 +215,7 @@
         <span class="close" id="editCloseBtn">&times;</span>
         <h2>Edit Player Record</h2>
         <form id="editPlayerForm" class="player-form">
+           <input type="hidden" id="editPlayerId" />
           <div class="form-group">
             <label for="editPlayerName">Player Name *</label>
             <input
@@ -377,7 +223,6 @@
               id="editPlayerName"
               placeholder="Enter player name"
               required
-              disabled
             />
           </div>
           <div class="form-row">
@@ -439,7 +284,7 @@
     <section class="characters-section">
       <div class="container">
         <h2 class="section-title">Playable Characters</h2>
-        <div class="characters-grid" id="charactersGrid">
+        <div class="carousel" id="charactersCarousel">
           <!-- Characters will be loaded here by JavaScript -->
         </div>
       </div>
@@ -521,6 +366,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script type="module" src="ranking.js"></script>
   </body>
 </html>
