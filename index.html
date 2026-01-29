@@ -10,23 +10,41 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="nav-container">
-        <div class="logo">🎲 Tabletop-Ozamiz</div>
+        <div class="logo">
+          <img
+            src="Tabletop-Ozamiz Assets/!tabletop-oz-Main.png"
+            alt="Tabletop-Ozamiz Logo"
+            class="logo-img"
+          />
+        </div>
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#boardgames" class="nav-link">Boardgame</a></li>
-          <li>
-            <a href="unmatched-ranking.html" class="nav-link"
-              >Unmatched Ranking</a
-            >
-          </li>
-          <li>
-            <a href="dice-throne-ranking.html" class="nav-link"
-              >Dice Throne Ranking</a
-            >
+          <li class="dropdown">
+            <a href="#boardgames" class="nav-link dropdown-toggle">Boardgame</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="unmatched-ranking.html" class="nav-link"
+                  >Unmatched Ranking</a
+                >
+              </li>
+              <li>
+                <a href="dice-throne-ranking.html" class="nav-link"
+                  >Dice Throne Ranking</a
+                >
+              </li>
+            </ul>
           </li>
           <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#events" class="nav-link">Events</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle">Login</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" id="adminBtn" class="nav-link">Admin Login</a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <div class="hamburger">
           <span></span>
@@ -50,6 +68,11 @@
     <!-- Section 1: Mission, Vision, Goals -->
     <section class="mission-section">
       <div class="container">
+        <img
+          src="Tabletop-Ozamiz Assets/Symbol/!tabletop-oz-symbol-main.png"
+          alt="Tabletop-Ozamiz Symbol"
+          class="section-symbol"
+        />
         <h2 class="section-title">About Tabletop-Ozamiz</h2>
         <div class="mission-grid">
           <div class="mission-card">
@@ -187,9 +210,14 @@
         <h2 class="section-title">Game Catalog</h2>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">⚔️</span>
-            </div>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://hotgamemagnet.com/wp-content/uploads/2023/08/UM-BoL2-box-render-left.png&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
             <div class="gallery-info">
               <h4>Unmatched</h4>
               <p class="game-meta">1v1 • 20-40 min • 2+ Players</p>
@@ -199,9 +227,14 @@
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">🎲</span>
-            </div>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://888lots.com/images/products/dice-throne-season-one-rerolled-battle-chest-888-1988884756-us_thumb.webp&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
             <div class="gallery-info">
               <h4>Dice Throne</h4>
               <p class="game-meta">1v1-4 • 30-45 min • 2-4 Players</p>
@@ -211,23 +244,33 @@
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">♟️</span>
-            </div>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://geekbecois.com/wp-content/uploads/2022/10/flamecraft_wallpaper_1920x1080_fr.png&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
             <div class="gallery-info">
-              <h4>Chess</h4>
-              <p class="game-meta">1v1 • 10-60 min • 2 Players</p>
+              <h4>Flamecraft</h4>
+              <p class="game-meta">1v1-4 • 30-45 min • 2-4 Players</p>
               <div class="game-actions">
                 <button class="action-btn">View Details</button>
               </div>
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">🧩</span>
-            </div>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://m.media-amazon.com/images/S/aplus-media-library-service-media/77d1001a-d503-450c-bfa2-f7968449c157.__CR0,0,1940,1200_PT0_SX970_V1___.png&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
             <div class="gallery-info">
-              <h4>Catan</h4>
+              <h4>Survive the Island</h4>
               <p class="game-meta">Multiplayer • 45-90 min • 3-4 Players</p>
               <div class="game-actions">
                 <button class="action-btn">View Details</button>
@@ -235,21 +278,41 @@
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">🃏</span>
-            </div>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://i.etsystatic.com/22611795/r/il/692aab/4030621774/il_800x800.4030621774_fjc7.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
             <div class="gallery-info">
-              <h4>Poker</h4>
-              <p class="game-meta">Multiplayer • 30+ min • 2+ Players</p>
+              <h4>Scout</h4>
+              <p class="game-meta">Multiplayer • 20-30 min • 2-4 Players</p>
               <div class="game-actions">
                 <button class="action-btn">View Details</button>
               </div>
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image">
-              <span class="game-badge">🎯</span>
+            <div
+              class="gallery-image"
+              style="
+                background-image: url(&quot;https://tse3.mm.bing.net/th/id/OIP.H_BE2eUCisHBA6RyDDKeggHaHb?rs=1&pid=ImgDetMain&o=7&rm=3&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="gallery-info">
+              <h4>Deep Regrets</h4>
+              <p class="game-meta">Party • 30-45 min • 3-6 Players</p>
+              <div class="game-actions">
+                <button class="action-btn">View Details</button>
+              </div>
             </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image"></div>
             <div class="gallery-info">
               <h4>More Games</h4>
               <p class="game-meta">Coming Soon</p>
@@ -399,6 +462,37 @@
       </div>
     </div>
 
+    <!-- Game Details Modal -->
+    <div id="gameDetailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="gameDetailsCloseBtn">&times;</span>
+        <div class="game-details-container">
+          <img
+            id="gameDetailsImage"
+            src=""
+            alt="Game Image"
+            class="game-details-image"
+          />
+          <div class="game-details-info">
+            <h2 id="gameDetailsTitle"></h2>
+            <p id="gameDetailsDescription"></p>
+            <div class="game-details-specs">
+              <div class="spec">
+                <strong>Players:</strong> <span id="gameDetailsPlayers"></span>
+              </div>
+              <div class="spec">
+                <strong>Duration:</strong>
+                <span id="gameDetailsDuration"></span>
+              </div>
+              <div class="spec">
+                <strong>Type:</strong> <span id="gameDetailsType"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="about-section">
       <div class="container">
@@ -415,6 +509,106 @@
             tabletop gaming, we have something for everyone. Join us for game
             nights, tournaments, and special events throughout the year.
           </p>
+        </div>
+
+        <!-- Pioneers Section -->
+        <div class="pioneers-section">
+          <h3 class="section-subtitle">Our Pioneers</h3>
+          <p class="pioneers-subtitle">
+            Meet the founding members who started this amazing community
+          </p>
+          <div class="pioneers-gallery">
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer1"
+                alt="Pioneer 1"
+                class="pioneer-image"
+              />
+              <h4>Alex Rivera</h4>
+              <p class="pioneer-role">Founder & Director</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer2"
+                alt="Pioneer 2"
+                class="pioneer-image"
+              />
+              <h4>Jordan Chen</h4>
+              <p class="pioneer-role">Co-Founder</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer3"
+                alt="Pioneer 3"
+                class="pioneer-image"
+              />
+              <h4>Sarah Martinez</h4>
+              <p class="pioneer-role">Tournament Coordinator</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer4"
+                alt="Pioneer 4"
+                class="pioneer-image"
+              />
+              <h4>Marcus Johnson</h4>
+              <p class="pioneer-role">Ranking Administrator</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer5"
+                alt="Pioneer 5"
+                class="pioneer-image"
+              />
+              <h4>Elena Rodriguez</h4>
+              <p class="pioneer-role">Community Manager</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer6"
+                alt="Pioneer 6"
+                class="pioneer-image"
+              />
+              <h4>David Thompson</h4>
+              <p class="pioneer-role">Events Manager</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer7"
+                alt="Pioneer 7"
+                class="pioneer-image"
+              />
+              <h4>Lisa Chen</h4>
+              <p class="pioneer-role">Marketing Lead</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer8"
+                alt="Pioneer 8"
+                class="pioneer-image"
+              />
+              <h4>Robert Williams</h4>
+              <p class="pioneer-role">Finance Officer</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer9"
+                alt="Pioneer 9"
+                class="pioneer-image"
+              />
+              <h4>Amanda Foster</h4>
+              <p class="pioneer-role">Community Advocate</p>
+            </div>
+            <div class="pioneer-card">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer10"
+                alt="Pioneer 10"
+                class="pioneer-image"
+              />
+              <h4>Christopher Lee</h4>
+              <p class="pioneer-role">Technical Support</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -453,5 +647,6 @@
     <script type="module" src="firebase.js"></script>
     <script type="module" src="gallery.js"></script>
     <script src="script.js"></script>
+    <script src="game-details.js"></script>
   </body>
 </html>
