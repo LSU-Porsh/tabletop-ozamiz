@@ -314,10 +314,13 @@
           <div class="gallery-item">
             <div class="gallery-image"></div>
             <div class="gallery-info">
-              <h4>More Games</h4>
+              <h4 class="more-games-link">More Games</h4>
               <p class="game-meta">Coming Soon</p>
+              <p class="more-games-text">
+                Suggest a game or get notified about new additions
+              </p>
               <div class="game-actions">
-                <button class="action-btn">Notify Me</button>
+                <button class="action-btn" id="notifyMeBtn">Notify Me</button>
               </div>
             </div>
           </div>
@@ -520,98 +523,140 @@
           <div class="pioneers-gallery">
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer1"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer1&backgroundColor=random"
                 alt="Pioneer 1"
                 class="pioneer-image"
               />
-              <h4>Alex Rivera</h4>
-              <p class="pioneer-role">Founder & Director</p>
+              <h4>Andrae Ruch Gerong</h4>
+              <p class="pioneer-role">Founder</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer2"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer2&backgroundColor=random"
                 alt="Pioneer 2"
                 class="pioneer-image"
               />
-              <h4>Jordan Chen</h4>
-              <p class="pioneer-role">Co-Founder</p>
+              <h4>Dito Ybanez</h4>
+              <p class="pioneer-role">Founder</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer3"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer3&backgroundColor=random"
                 alt="Pioneer 3"
                 class="pioneer-image"
               />
-              <h4>Sarah Martinez</h4>
-              <p class="pioneer-role">Tournament Coordinator</p>
+              <h4>Neil Laurete</h4>
+              <p class="pioneer-role">Founder</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer4"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer4&backgroundColor=random"
                 alt="Pioneer 4"
                 class="pioneer-image"
               />
-              <h4>Marcus Johnson</h4>
-              <p class="pioneer-role">Ranking Administrator</p>
+              <h4>Guy Abucay</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer5"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer5&backgroundColor=random"
                 alt="Pioneer 5"
                 class="pioneer-image"
               />
-              <h4>Elena Rodriguez</h4>
-              <p class="pioneer-role">Community Manager</p>
+              <h4>Ruel Buray</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer6"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer6&backgroundColor=random"
                 alt="Pioneer 6"
                 class="pioneer-image"
               />
-              <h4>David Thompson</h4>
-              <p class="pioneer-role">Events Manager</p>
+              <h4>Lorenxon Nic Batoctoy</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer7"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer7&backgroundColor=random"
                 alt="Pioneer 7"
                 class="pioneer-image"
               />
-              <h4>Lisa Chen</h4>
-              <p class="pioneer-role">Marketing Lead</p>
+              <h4>Alexis</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer8"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer8&backgroundColor=random"
                 alt="Pioneer 8"
                 class="pioneer-image"
               />
-              <h4>Robert Williams</h4>
-              <p class="pioneer-role">Finance Officer</p>
+              <h4>Zyrell</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer9"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer9&backgroundColor=random"
                 alt="Pioneer 9"
                 class="pioneer-image"
               />
-              <h4>Amanda Foster</h4>
-              <p class="pioneer-role">Community Advocate</p>
+              <h4>Forcia Mae Batoctoy</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
             <div class="pioneer-card">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer10"
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=pioneer10&backgroundColor=random"
                 alt="Pioneer 10"
                 class="pioneer-image"
               />
-              <h4>Christopher Lee</h4>
-              <p class="pioneer-role">Technical Support</p>
+              <h4>Danazel</h4>
+              <p class="pioneer-role">Founding Member</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Notify Me Modal -->
+    <div id="notifyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="notifyCloseBtn">&times;</span>
+        <h2>Get Notified About New Games</h2>
+        <form id="notifyForm" class="player-form">
+          <div class="form-group">
+            <label for="notifyName">Your Name *</label>
+            <input
+              type="text"
+              id="notifyName"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="notifyEmail">Email Address *</label>
+            <input
+              type="email"
+              id="notifyEmail"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="suggestGame">Suggest a Game (Optional)</label>
+            <textarea
+              id="suggestGame"
+              placeholder="Tell us about a game you'd like to see..."
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Notify Me</button>
+            <button type="button" class="cancel-btn" id="notifyFormCancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -648,5 +693,6 @@
     <script type="module" src="gallery.js"></script>
     <script src="script.js"></script>
     <script src="game-details.js"></script>
+    <script src="notify-modal.js"></script>
   </body>
 </html>

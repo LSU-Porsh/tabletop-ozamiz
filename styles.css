@@ -715,9 +715,31 @@ p {
 
 /* Gallery Section */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  padding-bottom: 0.5rem;
+}
+
+.gallery-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius: 10px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-purple);
 }
 
 .gallery-item {
@@ -726,6 +748,8 @@ p {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  min-width: 280px;
+  flex-shrink: 0;
 }
 
 .gallery-item:hover {
@@ -741,6 +765,22 @@ p {
   justify-content: center;
 }
 
+.gallery-item:last-child .gallery-image {
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple) 0%,
+    var(--dark-purple) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:last-child .gallery-image::before {
+  content: "🎮";
+  font-size: 3rem;
+}
+
 .game-badge {
   font-size: 2rem;
 }
@@ -749,9 +789,33 @@ p {
   padding: 1.5rem;
 }
 
+.gallery-item:last-child .gallery-info {
+  background-color: var(--bg-secondary);
+}
+
 .gallery-info h4 {
   color: var(--primary-purple);
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.more-games-link {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--primary-purple);
+}
+
+.more-games-link:hover {
+  color: var(--dark-purple);
+  text-decoration: underline;
+}
+
+.more-games-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .game-meta {
